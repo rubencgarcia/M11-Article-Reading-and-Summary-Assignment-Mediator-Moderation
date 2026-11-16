@@ -3,7 +3,7 @@
     "path": "~/Desktop/6500 Assignments/M11-Article Reading and Summary Assignment- Mediator_Moderatior/M11-Article-Summary-Baron-Kenny.qmd",
     "project_path": "M11-Article-Summary-Baron-Kenny.qmd",
     "type": "quarto_markdown",
-    "hash": "706812186",
+    "hash": "3950461089",
     "contents": "",
     "dirty": false,
     "created": 1794793110903.0,
@@ -11,14 +11,16 @@
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "369,218",
+        "scrollLine": "364"
     },
     "folds": "",
-    "lastKnownWriteTime": 1794793117,
+    "lastKnownWriteTime": 1794793322,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1794793117893,
+    "last_content_update": 1794793322470,
     "read_only": false,
     "read_only_alternatives": []
 }

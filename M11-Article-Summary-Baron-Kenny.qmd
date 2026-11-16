@@ -363,11 +363,11 @@ interaction_row
 
 Reading the output: the **X:Z** row is the moderator test (Path c in Figure 1). A significant interaction, with X and Z controlled, is the evidence for moderation.
 
-# Appendix
+## Appendix
 
-**GitHub Repository:** <https://github.com/rubencgarcia/REPLACE-WITH-YOUR-REPO-NAME>
+**GitHub Repository:** [M11-Article-Reading-and-Summary-Assignment-Mediator-Moderation](https://github.com/rubencgarcia/M11-Article-Reading-and-Summary-Assignment-Mediator-Moderation)
 
-**GitHub Pages:** <https://rubencgarcia.github.io/REPLACE-WITH-YOUR-REPO-NAME/>
+**GitHub Pages Website:** [https://rubencgarcia.github.io/M11-Article-Reading-and-Summary-Assignment-Mediator-Moderation/](https://rubencgarcia.github.io/M11-Article-Reading-and-Summary-Assignment-Mediator-Moderation/)
 
 # References
 
