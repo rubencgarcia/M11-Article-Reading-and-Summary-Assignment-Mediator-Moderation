@@ -1,0 +1,374 @@
+---
+title: "M11 Article Reading and Summary: Moderation and Mediation"
+subtitle: "Baron and Kenny (1986), The Moderator–Mediator Variable Distinction"
+author: "Ruben Garcia"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+    smooth-scroll: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Article at a Glance
+
+**Citation (Chicago author-date):** Baron, Reuben M., and David A. Kenny. 1986. "The Moderator–Mediator Variable Distinction in Social Psychological Research: Conceptual, Strategic, and Statistical Considerations." *Journal of Personality and Social Psychology* 51 (6): 1173–82. <https://doi.org/10.1037/0022-3514.51.6.1173>.
+
+**Why I'm reading it:** This is *the* classic reference for telling moderators and mediators apart, and for knowing which analysis goes with which idea. Since it shows up all over survey and behavioral research (including marketing), these notes are built to be a quick reference I can come back to.
+
+::: {.callout-note}
+## The one-sentence version
+A **moderator** tells you *when* or *for whom* an effect holds (it changes the strength or direction of the X → Y relationship), while a **mediator** tells you *how* or *why* the effect happens (it is the mechanism that carries X's influence to Y).
+:::
+
+# The Big Idea: Two Different Jobs for a Third Variable
+
+Baron and Kenny's main complaint is that researchers were using the words "moderator" and "mediator" as if they meant the same thing. They don't. The authors set out to:
+
+1. Separate the two concepts on three levels: **conceptual**, **strategic**, and **statistical**.
+2. Show that the distinction matters for theory, research design, and the analysis plan.
+3. Give a practical set of analytic procedures for each, plus a framework for studies that include both.
+
+They also make a point of saying that the distinction is **not** the same as experimental manipulation vs. measured variable, situational vs. person variable, or manipulation vs. self-report. Moderators can be manipulated or measured, and mediators are not limited to self-reports or to individual-level variables (think norms, cohesiveness, or groupthink at the group level).
+
+| | **Moderator** | **Mediator** |
+|---|---|---|
+| Core question | *When* / *for whom* does X affect Y? | *How* / *why* does X affect Y? |
+| What it does | Changes direction and/or strength of the X–Y relation | Accounts for (transmits) the X–Y relation |
+| Causal position | Same level as the predictor; always acts like an independent variable | Sits between X and Y; is an effect of X and a cause of Y |
+| Statistical signature | Significant **interaction** (X × Z) | X → M, M → Y, and X's effect shrinks when M is controlled |
+| Ideal relation to X | Uncorrelated with the predictor and the criterion | Correlated with X (X is assumed to cause it) |
+| Best used when | The X–Y relation is weak or inconsistent | The X–Y relation is strong |
+
+# Moderators
+
+## What a moderator is
+
+A moderator can be **qualitative** (sex, race, class) or **quantitative** (level of reward). In correlational terms, it is a third variable that affects the zero-order correlation between two other variables. In ANOVA terms, it shows up as an **interaction** between the focal independent variable and a factor that specifies the conditions under which the effect operates.
+
+Examples from the article:
+
+- Stern et al. found the life-events-to-illness link was much stronger for uncontrollable events (like the death of a spouse) than for controllable ones (like divorce).
+- In dissonance research, the "insufficient justification" effect depended on moderators such as commitment, personal responsibility, and free choice. A crossover interaction (attitude change inversely related to incentive under public commitment, directly related under private conditions) is a classic moderator pattern.
+
+A small footnote worth remembering: crossover interactions are statistically cleaner (no residual main effects), but conceptually, going from a strong effect to *no* effect can be more impressive.
+
+## The moderator path model (Figure 1)
+
+The model has three paths pointing at the outcome:
+
+- **Path a:** predictor → outcome
+- **Path b:** moderator → outcome
+- **Path c:** predictor × moderator interaction → outcome
+
+The moderator hypothesis is supported if **Path c (the interaction) is significant**. Significant main effects (paths a and b) can happen too, but they are not what tests the moderator idea. It is also desirable for the moderator to be uncorrelated with both the predictor and the criterion so the interaction term is cleanly interpretable.
+
+## Testing moderation: four cases
+
+The right test depends on how the predictor (X) and moderator (Z) are measured. The authors simplify by treating all categorical variables as dichotomies.
+
+| Case | Predictor (X) | Moderator (Z) | How to test it |
+|---|---|---|---|
+| **1** | Categorical | Categorical | 2 × 2 ANOVA; moderation = the interaction. Check simple effects only if the interaction is there. |
+| **2** | Continuous | Categorical | Compare **unstandardized regression slopes** across the groups of Z (not correlations). |
+| **3** | Categorical | Continuous | You need an *a priori* idea of the shape of the moderation (linear, quadratic, step). Linear: add the product term. |
+| **4** | Continuous | Continuous | Regress Y on X, Z, and XZ; the XZ term tests moderation. Quadratic: add Z² and XZ². |
+
+### Case 2 details (continuous X, dichotomous Z)
+
+- Comparing *correlations* across groups is risky for two reasons: **restriction of range** (less variance in X in one group lowers its correlation) and **differential measurement error** in Y across groups.
+- Regression coefficients are not distorted by differences in X's variance or by measurement error in Y, so the article recommends **unstandardized (not beta) regression coefficients** (and testing the *difference* between slopes first, before testing each slope on its own).
+- If measurement error in X differs across groups, slopes would need to be disattenuated, which can be done with a multiple-group model in LISREL.
+
+### Case 3 details (dichotomous X, continuous Z)
+
+The authors lay out three idealized shapes for how the moderator changes X's effect (Figure 2):
+
+1. **Linear:** steady, gradual change in X's effect as Z changes. This is the form usually assumed.
+2. **Quadratic:** the effect accelerates or bends as Z increases.
+3. **Step:** the effect flips or jumps at a critical point of Z. Test it by dichotomizing Z at that point and proceeding as in Case 1 (though theories in social psychology rarely pinpoint that cutoff).
+
+Their running example: a fear-arousing vs. rational message (X) and IQ (Z). Since Z has many levels, you cannot test the vague hypothesis that "the effect changes with Z"; you need a specific functional form.
+
+### Case 4 details (both continuous)
+
+- Step function: dichotomize Z at the step point, then it becomes Case 2.
+- Linear: regress Y on X, Z, and the product XZ. The **XZ effect (controlling X and Z)** is the moderator test. Simple effects at different levels of Z can then be probed (Aiken and West).
+- Quadratic: regress Y on X, Z, XZ, Z², and XZ²; the test of quadratic moderation is the XZ² term. Graphing or tabling the predicted values helps a lot with interpretation.
+- **Measurement error** in either variable makes this much harder: it cuts power for interaction tests (Busemeyer and Jones), and the Kenny and Judd methods can adjust for it (but they assume normally distributed variables).
+
+# Mediators
+
+## What a mediator is
+
+A variable acts as a mediator to the extent that it **accounts for the relation between the predictor and the criterion**. The idea goes back to Woodworth's S-O-R model: stimuli affect behavior through internal processes in the organism. Mediators explain how external events take on psychological significance.
+
+The mediator path model (Figure 3) has three paths:
+
+- **Path a:** independent variable → mediator
+- **Path b:** mediator → outcome
+- **Path c:** independent variable → outcome (the direct effect)
+
+## The mediation conditions
+
+A variable is functioning as a mediator when:
+
+1. Changes in the **independent variable** significantly account for changes in the **mediator** (Path a).
+2. Changes in the **mediator** significantly account for changes in the **dependent variable** (Path b).
+3. When paths a and b are controlled, the previously significant X–Y relation is **no longer significant** (or at least drops); the strongest demonstration is when Path c goes to **zero**.
+
+A practical note from the authors: if Path c drops to zero, that is evidence for a single dominant mediator. If it is reduced but not zero, there are probably multiple mediators, which is realistic for most psychological (and marketing) phenomena. A more realistic goal is often to find mediators that **significantly reduce** Path c rather than erase it.
+
+## Testing mediation: three regression equations
+
+The article recommends running a series of regressions (an ANOVA alone provides only a limited test):
+
+| Step | Regression | What must be true |
+|---|---|---|
+| 1 | Mediator regressed on the independent variable | X significantly predicts M |
+| 2 | Dependent variable regressed on the independent variable | X significantly predicts Y |
+| 3 | Dependent variable regressed on **both** X and M | M significantly predicts Y, and X's effect is **smaller** than in Step 2 |
+
+- **Perfect (complete) mediation:** X has no effect on Y once M is controlled.
+- Estimate and test separate coefficients for each equation; no need for stepwise or hierarchical regression or partial/semipartial correlations.
+- Because X is assumed to cause M, the two are correlated, which creates **multicollinearity** in the third equation and lowers power. So look at the **absolute size** of the coefficients, not just their significance.
+
+## The Sobel test for the indirect effect
+
+Sobel (1982) provided an approximate significance test for the **indirect effect** (the product *a × b*). With *s~a~* and *s~b~* as the standard errors of paths a and b, the article gives the standard error of the indirect effect as:
+
+$$
+SE_{ab} = \sqrt{b^{2}s_{a}^{2} + a^{2}s_{b}^{2} + s_{a}^{2}s_{b}^{2}}
+$$
+
+Sobel's approximate version drops the last term (*s~a~²s~b~²*), which is usually small. The method can be extended to more complicated models.
+
+## Two big assumptions (and what happens when they fail)
+
+Using multiple regression for mediation assumes:
+
+1. **No measurement error in the mediator.**
+2. **The dependent variable does not cause the mediator** (no feedback).
+
+**Problem 1: Measurement error in the mediator.** Mediators are often internal or psychological, so they tend to be measured with error. Consequences (when coefficients are all positive): the mediator's effect gets **underestimated**, and the independent variable's direct effect gets **overestimated**. That means a real mediator can be overlooked. The bias is worst for good mediators (ones caused by X that also cause Y). The usual fix is **multiple indicators** of each construct and **latent-variable structural equation modeling** (LISREL, EQS). Advantages of SEM here: all relevant paths are tested directly, and measurement error, correlated error, and even feedback can be built into the model.
+
+**Problem 2: Feedback.** We could be wrong about which variable is the mediator and which is the outcome. Smith (1982) proposed manipulating two variables, one that affects only the mediator and one that affects only the outcome, and estimating the model with **two-stage least squares** or a related technique (SEM can also handle feedback models).
+
+# Moderators vs. Mediators: Strategic Considerations
+
+- **When to look for moderators:** when the predictor–criterion relation is unexpectedly weak or inconsistent (it holds in one setting but not another, or for one subgroup but not another). The self-monitoring work in personality research is the example.
+- **When to look for mediators:** when the predictor–criterion relation is **strong**.
+- **Moderator → mediator:** a moderator finding can be a first step toward a mediator. For instance, if an instructional technique works better for one group, the real explanation might be a mediating process (like evaluative anxiety) that differs across groups. The authors suggest choosing moderators that do more than boost predictive power, ideally ones that hint at a process.
+- **Mediator → moderator:** a mediator can point toward interventions. For instance, if perceived control mediates the link between social density and poor task performance, that suggests designing environments that increase controllability.
+- **Focus of interest:** mediator research cares more about the **mechanism**, while moderator research tends to care more about the **predictor itself** (although in social psychology, moderators are often just as theory-driven as mediators).
+
+## Operational implications (manipulate vs. measure)
+
+Using their control and stress example:
+
+- If you are testing **control as a moderator**, you typically **manipulate** control experimentally to make it independent of the stressor. You do not necessarily need to measure perceived control (if you do, it serves as a manipulation check).
+- If you are testing **control as a mediator**, the key is an **independent measurement of perceived control**, since it is the mechanism. That is a construct-validity issue, so ideally you collect multiple, converging measures (Campbell and Fiske, 1959). In other words, mediation questions call for more and better data.
+
+# A Combined Moderation + Mediation Framework (Figure 4)
+
+The authors offer a path-analytic framework for when one variable has **both** roles. Notation:
+
+| Symbol | Meaning |
+|---|---|
+| **C** | Manipulated control |
+| **S** | Stressor (independent variable) |
+| **P** | Measured perceived control (the mediator) |
+| **O** | Outcome |
+| **CS, PS, CP, CPS** | Interactions (C × S, P × S, C × P, C × P × S) |
+
+They assume C and S are dichotomies and that moderator effects are linear. The analysis runs in three steps:
+
+1. **Step 1: Effects of the manipulated variables on O** (a simple 2 × 2 ANOVA). A C effect suggests control may mediate; an S effect makes it sensible to look for mediators; a **CS effect indicates moderation**.
+2. **Step 2: Effects to and from P.** Regress P on C, S, and CS, then regress O on C, S, P, and CS. For P to mediate the S → O relation, S must affect P and P must affect O. To strengthen the claim that *perceived* control is the mediator, C should strongly affect P but **not** affect O directly. If the CS effect on O gets weaker once P is included, that is what the authors call **mediated moderation**.
+3. **Step 3: Add PS.** Regress O on C, S, P, CS, and PS. If the CS effect shrinks from Step 2 to Step 3 and PS affects O, then P (and not just the manipulation C) is what moderates the S → O relation.
+
+They also mention that further models are possible, for example one with CP to explore **moderated mediation** (the mediational effect of P varies across levels of C), and the CPS second-order interaction.
+
+# Applications Discussed in the Article
+
+1. **Personal control and crowding.** Studies that used a manipulation of control but never independently measured perceived control could not make a strong mediator claim, and without a Control × Density interaction they could not make a moderator claim either. The authors suggest the evidence currently supports control as a **moderator** more easily than as a mediator of the density–crowding relation.
+2. **Behavioral intention → behavior (Fishbein and Ajzen).** Behavioral intention is a clear mediator of attitudes and norms on behavior. But variables like gender, time delay, skill, and resources were all treated as "mediating factors" for the intention–behavior link. Some (like gender) are better treated as **moderators**, tested with a product term (for example, Gender × Intention).
+3. **Linking traits and attitudes to behavior.** Self-monitoring and self-consciousness have been used as moderators to improve prediction. The article argues the combined model would let researchers also test the **process** (for instance, differences in attention or impression management) rather than just sorting people into groups. In their words, a moderator is a relatively static classification, whereas adding a mediator gives a more dynamic picture of how third variables work.
+
+# Quick-Reference Cheat Sheet
+
+::: {.callout-tip}
+## If I only remember a few things
+- **Moderator = "when/for whom" = interaction term (X × Z) must be significant.**
+- **Mediator = "how/why" = a → b path, and the X–Y effect drops when M is added.**
+- Moderators are on the same causal level as the predictor; mediators sit *between* the predictor and the outcome.
+- Use **unstandardized regression coefficients**, not correlations, to compare effects across moderator groups.
+- Check **absolute size** of coefficients in the mediation model, not just p-values (multicollinearity cuts power).
+- Complete mediation (Path c = 0) is rare; a **significant reduction** in Path c is a realistic goal.
+- Measurement error in the mediator can hide a real mediation effect; use **multiple indicators / SEM** if you can.
+- Mediation assumes **no feedback** from Y to M.
+- Manipulating a variable fits a moderator test; **measuring** the variable independently is what a mediator test demands.
+:::
+
+# Limitations and Extra Context
+
+This part is my own context rather than a summary of the article, so I'm flagging it clearly.
+
+- The article is from 1986, and its "causal steps" approach (requiring a significant X → Y effect before looking for mediation) has been debated since. Later work, for example on bootstrapped confidence intervals for the indirect effect, is now commonly preferred over the Sobel test because the product *a × b* is not normally distributed.
+- Some later authors also note that you can have an indirect effect even without a significant total effect, so Step 2 of the original recipe is not always treated as strictly required.
+- I'd still treat Baron and Kenny as the foundation for the **concepts** (moderator vs. mediator, interactions, indirect paths), and check newer sources for the preferred modern tests when I do actual analyses for the culminating project.
+
+# Short R Demo (Simulated Data)
+
+To make the ideas concrete, here is a small simulation in R. Each step is written out separately.
+
+## Mediation: the three regression equations plus the Sobel-style test
+
+```{r}
+#| label: mediation-simulate
+
+# Step 1: set a seed so the results are reproducible
+set.seed(1986)
+
+# Step 2: choose a sample size
+n_obs <- 300
+
+# Step 3: simulate the independent variable X
+X <- rnorm(n_obs, mean = 0, sd = 1)
+
+# Step 4: simulate the mediator M, which is partly caused by X
+M <- 0.5 * X + rnorm(n_obs, mean = 0, sd = 1)
+
+# Step 5: simulate the outcome Y, caused by M and a little by X
+Y <- 0.4 * M + 0.1 * X + rnorm(n_obs, mean = 0, sd = 1)
+
+# Step 6: put the variables into a data frame
+mediation_data <- data.frame(X = X, M = M, Y = Y)
+
+# Step 7: look at the first few rows
+head(mediation_data)
+```
+
+```{r}
+#| label: mediation-equations
+
+# Equation 1: regress the mediator on the independent variable (Path a)
+model_a <- lm(M ~ X, data = mediation_data)
+summary(model_a)
+
+# Equation 2: regress the outcome on the independent variable (total effect, Path c)
+model_c <- lm(Y ~ X, data = mediation_data)
+summary(model_c)
+
+# Equation 3: regress the outcome on both X and M (direct effect c' and Path b)
+model_b <- lm(Y ~ X + M, data = mediation_data)
+summary(model_b)
+```
+
+```{r}
+#| label: sobel-test
+
+# Step 1: pull the coefficient table from Equation 1
+coef_table_a <- coef(summary(model_a))
+
+# Step 2: pull the coefficient table from Equation 3
+coef_table_b <- coef(summary(model_b))
+
+# Step 3: Path a estimate and its standard error
+a_hat <- coef_table_a["X", "Estimate"]
+s_a <- coef_table_a["X", "Std. Error"]
+
+# Step 4: Path b estimate and its standard error
+b_hat <- coef_table_b["M", "Estimate"]
+s_b <- coef_table_b["M", "Std. Error"]
+
+# Step 5: the indirect effect (a times b)
+indirect_effect <- a_hat * b_hat
+
+# Step 6: the standard error of the indirect effect, using the formula in the article
+se_indirect <- sqrt((b_hat^2 * s_a^2) + (a_hat^2 * s_b^2) + (s_a^2 * s_b^2))
+
+# Step 7: the z statistic
+z_value <- indirect_effect / se_indirect
+
+# Step 8: the two-sided p-value
+p_value <- 2 * (1 - pnorm(abs(z_value)))
+
+# Step 9: collect everything in one small table
+sobel_results <- data.frame(
+  indirect_effect = indirect_effect,
+  std_error = se_indirect,
+  z = z_value,
+  p = p_value
+)
+
+# Step 10: print it
+sobel_results
+```
+
+Reading the output: if Path a and Path b are both significant, and the coefficient for X shrinks when M is added in Equation 3 compared with Equation 2, we have the pattern Baron and Kenny describe for mediation.
+
+## Moderation: the interaction term
+
+```{r}
+#| label: moderation-simulate
+
+# Step 1: set a seed
+set.seed(51)
+
+# Step 2: sample size
+n_mod <- 300
+
+# Step 3: simulate the predictor X
+X_mod <- rnorm(n_mod, mean = 0, sd = 1)
+
+# Step 4: simulate the moderator Z
+Z_mod <- rnorm(n_mod, mean = 0, sd = 1)
+
+# Step 5: simulate Y, where the effect of X depends on Z (the X times Z term)
+Y_mod <- 0.3 * X_mod + 0.2 * Z_mod + 0.4 * X_mod * Z_mod + rnorm(n_mod, mean = 0, sd = 1)
+
+# Step 6: put the variables into a data frame
+moderation_data <- data.frame(X = X_mod, Z = Z_mod, Y = Y_mod)
+
+# Step 7: look at the first few rows
+head(moderation_data)
+```
+
+```{r}
+#| label: moderation-model
+
+# Step 1: regress Y on X, Z, and their product (X:Z is the interaction term)
+model_moderation <- lm(Y ~ X + Z + X:Z, data = moderation_data)
+
+# Step 2: view the full model summary
+summary(model_moderation)
+
+# Step 3: pull out the row for the interaction term
+interaction_row <- coef(summary(model_moderation))["X:Z", ]
+
+# Step 4: print it (a significant interaction supports moderation)
+interaction_row
+```
+
+Reading the output: the **X:Z** row is the moderator test (Path c in Figure 1). A significant interaction, with X and Z controlled, is the evidence for moderation.
+
+# Appendix
+
+**GitHub Repository:** <https://github.com/rubencgarcia/REPLACE-WITH-YOUR-REPO-NAME>
+
+**GitHub Pages:** <https://rubencgarcia.github.io/REPLACE-WITH-YOUR-REPO-NAME/>
+
+# References
+
+Baron, Reuben M., and David A. Kenny. 1986. "The Moderator–Mediator Variable Distinction in Social Psychological Research: Conceptual, Strategic, and Statistical Considerations." *Journal of Personality and Social Psychology* 51 (6): 1173–82. <https://doi.org/10.1037/0022-3514.51.6.1173>.
